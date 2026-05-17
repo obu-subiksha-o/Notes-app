@@ -1,4 +1,4 @@
-<img width="1918" height="1133" alt="Screenshot 2026-05-17 190423" src="https://github.com/user-attachments/assets/ba4a7ea2-3646-46e2-a0ec-334cec70edbf" /># Noto - Note it down
+# Noto - Note it down
 
 A clean and aesthetic full-stack notes application built with **FastAPI**, **SQLite**, and a simple frontend using **HTML, CSS, and JavaScript**.
 Users can register, login securely using JWT authentication, create notes, edit them, delete them, and even share notes with other users.
@@ -74,6 +74,8 @@ Built as a personal learning project to understand:
 ## Login Page
 
 <img width="1918" height="1133" alt="Screenshot 2026-05-17 190423" src="https://github.com/user-attachments/assets/0ec0e7cf-33a9-4ef2-86f6-50931235bf75"/>
+<img width="1918" height="1088" alt="Screenshot 2026-05-17 191540" src="https://github.com/user-attachments/assets/52f57e71-47f4-472f-a9b4-ea441d2ef437"/>
+
 
 
 ---
