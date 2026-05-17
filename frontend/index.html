@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>NOTO - Note it down</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- LOGIN -->
+
+    <div class="auth-page" id="loginPage">
+
+        <div class="auth-card">
+
+            <div class="logo-box">
+
+                <div class="logo-icon">
+                    <i class="fa-solid fa-note-sticky"></i>
+                </div>
+
+                <div class="logo-text">
+                    <h1>NOTO</h1>
+                    <p>Note it down</p>
+                </div>
+
+            </div>
+
+            <input type="email" id="loginEmail" placeholder="Email">
+            <input type="password" id="loginPassword" placeholder="Password">
+
+            <button class="auth-btn" onclick="login()">
+                Login
+            </button>
+
+            <div class="switch-auth">
+                New user?
+                <span onclick="showRegister()">Register</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- REGISTER -->
+
+    <div class="auth-page hidden" id="registerPage">
+
+        <div class="auth-card">
+
+            <div class="logo-box">
+
+                <div class="logo-icon">
+                    <i class="fa-solid fa-note-sticky"></i>
+                </div>
+
+                <div class="logo-text">
+                    <h1>NOTO</h1>
+                    <p>Note it down</p>
+                </div>
+
+            </div>
+
+            <input type="email" id="registerEmail" placeholder="Email">
+            <input type="password" id="registerPassword" placeholder="Password">
+
+            <button class="auth-btn" onclick="register()">
+                Register
+            </button>
+
+            <div class="switch-auth">
+                Already have an account?
+                <span onclick="showLogin()">Login</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- DASHBOARD -->
+
+    <div class="dashboard hidden" id="dashboard">
+
+        <!-- TOPBAR -->
+
+        <div class="topbar">
+
+            <div class="logo-box">
+
+                <div class="logo-icon fancy-logo">
+                    ✦
+                </div>
+
+                <div class="logo-text">
+                    <h1>NOTO</h1>
+                    <p>Note it down</p>
+                </div>
+
+            </div>
+
+            <div class="top-right">
+
+                <button class="theme-btn" onclick="toggleTheme()">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <button class="profile-btn notification-btn"
+                    onclick="openNotifications()">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="notification-badge hidden"
+                        id="notificationBadge">
+                    </span>
+
+                </button>
+
+                <button class="logout-btn" onclick="logout()">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- MAIN -->
+
+        <div class="main">
+
+            <!-- SIDEBAR -->
+
+            <div class="sidebar">
+
+                <button class="create-btn" onclick="newNote()">
+                    <i class="fa-solid fa-plus"></i>
+                    Create Note
+                </button>
+
+                <div class="notes-title">
+                    <i class="fa-regular fa-note-sticky"></i>
+                    My Notes
+                </div>
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search notes..."
+                        onkeyup="filterNotes()"
+                    >
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </div>
+
+                <div id="myNotesList"></div>
+
+                <div class="notes-title shared-title">
+                    <i class="fa-solid fa-share-nodes"></i>
+                    Shared Notes
+                </div>
+
+                <div id="sharedNotesList"></div>
+
+            </div>
+
+            <!-- EDITOR -->
+
+            <div class="editor-area">
+
+                <div class="editor-card">
+
+                    <div class="label">TITLE</div>
+
+                    <input
+                        type="text"
+                        id="noteTitle"
+                        class="title-input"
+                    >
+
+                    <div class="label">CONTENT</div>
+
+                    <textarea
+                        id="noteContent"
+                        class="content-input"
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- FIXED ACTIONS -->
+
+        <div class="fixed-actions">
+
+            <button class="share-btn" onclick="shareNote()">
+                <i class="fa-solid fa-share-nodes"></i>
+                Share
+            </button>
+
+            <button class="save-btn" onclick="saveNote()">
+                <i class="fa-regular fa-floppy-disk"></i>
+                Save
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- NOTIFICATIONS -->
+
+    <div class="hidden" id="notificationsPage">
+
+        <div class="topbar">
+
+            <div class="logo-box">
+
+                <div class="logo-icon fancy-logo">
+                    ✦
+                </div>
+
+                <div class="logo-text">
+                    <h1>NOTO</h1>
+                    <p>Note it down</p>
+                </div>
+
+            </div>
+
+            <button class="profile-btn"
+                onclick="closeNotifications()">
+
+                <i class="fa-solid fa-arrow-left"></i>
+                Back
+
+            </button>
+
+        </div>
+
+        <div class="notifications-container">
+
+            <h2>Notifications</h2>
+
+            <div id="notificationsList"></div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
